@@ -13,3 +13,7 @@ Application to assign tokens to lemmas using a look-up table constructed from a 
 ### naive-bayes
 
 Implementation of simple Naive Bayes classification algorithm for hotel reviews. Classifies a text of hotel review (tokenized into bag of words) into either {"positive"|"negative"} and either {"truthful"|"deceptive"}. Specifically, *P("positive"|{words}) = P("positive")P({words}|"positive")*. Assuming independence (i.e. naive), the conditional probability is then *P({words}|"positive") = P("happy"|"positive")P("excellent"|"positive")....*. Add-one smoothing to account for nonexistent observation and unseen words in the test data are simply ignored. Average F1 score of 88%. To run, `python nblearn.py op_spam_training_data` followed by `python nbclassify.py op_spam_testing_data`.
+
+### perceptron
+
+Implementation of vanilla and average perceptron for classification of hotel reviews. Classifies a text of hotel review (tokenized into bag of words) into either {"positive"|"negative"} and either {"truthful"|"deceptive"}. Unseen words in the test data are simply ignored. F1 score of 86.7% for vanilla perceptron and 87.3% for average perceptron. To run, `python perceplearn.py op_spam_training_data` followed by `python percepclassify.py {vanillamodel.txt|averagedmodel.txt} op_spam_testing_data`.
